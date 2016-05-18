@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main(){
+	char c;
+	c='1';
+	if(c==getchar()&&getchar()!='\n'){
+		cout<<"yes"<<endl;
+	}
+	else cout<<"no"<<endl
+	return 0;
+}

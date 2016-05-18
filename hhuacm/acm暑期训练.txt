@@ -1,0 +1,9 @@
+账号：team427 密码：252564
+华大密码09
+hhuacm
+http://acm.hdu.edu.cn/webcontest/contest_show.php?cid=9385
+HHU ACM第二周 数论专题(一)
+	素数，因数，快速幂，矩阵快速幂，欧拉函数
+HHU ACM第三周 数据结构专题(一)
+	二叉搜索树、线段树（单点更新、区间更新）、树状数组、并查集
+

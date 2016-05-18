@@ -1,0 +1,14 @@
+ c语言出错 redefinition of 'struct 解决
+呃，自己学着别人那样用C语言编程序，然后，编译的时候出现这个错误
+ redefinition of 'struct    。。。
+然后，我发现这样可以解决问题呢：
+假设上面出现的问题是：
+redefinition of ‘struct in_pktinfo'
+而结构struct in_pktinfo在common.h这个头文件中定义的，那么把common.h头文件修改成这个样子：
+#ifndef _COMMON
+#define _COMMON
+struct in_pktinfo {
+...
+};
+。。。。。
+#endif
