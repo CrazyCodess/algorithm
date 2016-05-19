@@ -16,7 +16,7 @@ int main(){
 	char c;
 	while((scanf("%d %c",&n,&c) != EOF) && (n <= 1000)){
 		if(n<1){
-			printf("1\n");
+			//printf("1\n");
 			continue;
 		}
 		if(n<7){
@@ -24,28 +24,26 @@ int main(){
 			continue;
 		}
 		k=sqrt((n+1)/2);
-		k--;
+		 
 		for(i=1;i<=k;i++){
-			for(j=i-1;j>=1;j--){
+			for(j=1;j<i;j++)
 				printf(" ");
-			}
-			for(j=1;j<=2*(k-i+1)+1;j++){
+			for(j=1;j<=2*(k-i+1)-1;j++){
 				printf("%c",c);
 			}
 			printf("\n");
 		}
-		for(i=1;i<=k;i++)printf(" ");
-		printf("%c\n",c);
-		for(i=1;i<=k;i++){
-			for(j=1;j<=k-i;j++){
+		
+		for(i=1;i<=k-1;i++){
+			for(j=1;j<=k-i-1;j++)	
 				printf(" ");
-			}
-			for(j=1;j<=2*i+1;j++){
+			for(j=1;j<=2*i+1;j++)
 				printf("%c",c);
-			}
+				
 			printf("\n");
+				
 		}
-		printf("%d\n",n-2*k*k-4*k-1);
+		printf("%d\n",n-2*k*k+1);
 	}
 	return 0;
 } 

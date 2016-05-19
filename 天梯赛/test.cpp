@@ -16,7 +16,6 @@ int main()
     }
     a-=2;
     t=(a-1)/2;
-    printf("a=%d t=%d re=%d\n",a,t,re);
     for(i=0;i<a;i++)
     {
         for(j=0;j<t-abs(i-t);j++)
