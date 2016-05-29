@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
+#include<cstring>
 using namespace std;
  
 const int MAXN = 2016;
