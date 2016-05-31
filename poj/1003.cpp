@@ -11,7 +11,6 @@ int main(){
 		for ( i = 2; s < f; ++i)
 		{
 			s+=1.0/i;
-			printf("%lf\n", s);
 
 		}
 		printf("%d card(s)\n", i-2);
