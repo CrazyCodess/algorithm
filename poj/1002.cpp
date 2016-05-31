@@ -1,59 +1,71 @@
 #include <iostream>
 #include <cstdio>
 #include <cstring>
+#include <algorithm>
+#include <map>
 using namespace std;
-char temp[17];
-char tel[100005][8];
+char temp[128];
+int tel[10000000];
+int tem;
+int f;
+int num[] =   
+{  
+    2, 2, 2,  
+    3, 3, 3,  
+    4, 4, 4,  
+    5, 5, 5,  
+    6, 6, 6,  
+    7, 0, 7, 7,  
+    8, 8, 8,  
+    9, 9, 9  
+};  
+//map<int ,int> tel;
 int main(){
-	int n,i,j,len,k;
+	int n,i,j,len,cnt;
+	memset(tel,0,sizeof(tel));
 	scanf("%d",&n);
 	for ( i = 0; i < n; ++i)
 	{
 		len=0;
-		cin>>temp;
+		scanf("%s",temp);
+		//cin>>temp;
 		len=strlen(temp);
-		k=0;
+		tem=0;
 		for(j=0;j<len;j++){
-			if(temp[j]=='-'||temp[j]==81||temp[j]==90)continue;
-			if(temp[j]>=65&&temp[j]<90){
-				switch(temp[j]){
-					case 'A':
-					case 'B':
-					case 'C':temp[j]='2';break;
-					case 'D':
-					case 'E':
-					case 'F':temp[j]='3';break;
-					case 'G':
-					case 'H':
-					case 'I':temp[j]='4';break;
-					case 'J':
-					case 'K':
-					case 'L':temp[j]='5';break;
-					case 'M':
-					case 'N':
-					case 'O':temp[j]='6';break;
-					case 'P':
-					case 'R':
-					case 'S':temp[j]='7';break;
-					case 'T':
-					case 'U':
-					case 'V':temp[j]='8';break;
-					case 'W':
-					case 'X':
-					case 'Y':temp[j]='9';break;
+			
+			if((temp[j]>='A'&&temp[j]<'Z'&&temp[j]!='Q')||(temp[j]>='0'&&temp[j]<='9')){
+				if (temp[j]>='A'&&temp[j]<'Z')
+				{
+					
+					tem=tem*10+num[temp[j]-'A'];
 				}
+				else
+				tem=tem*10+temp[j]-'0';
 			}
-			tel[i][k]=temp[j];
-			k++;
+
+
 		}
+
+		tel[tem]++;
+		//tel[tem]++;
 	}
 
-
-
-	for ( i = 0; i < n; ++i)
-	{
-		cout<<tel[i]<<endl;
-	}
+	f=0;
+/*	for(map<int, int>::iterator it = tel.begin(); it != tel.end(); it++)
+		if(it->second > 1)
+		{
+			f = true;
+			printf("%03d-%04d %d\n", it->first / 10000, it->first % 10000, it->second);
+		}*/
+	for ( i = 0; i <= 9999999; ++i)
+			{
+				if(tel[i]>1){
+					f=1;
+					printf("%03d-%04d %d\n", i/10000, i%10000, tel[i]);
+				}
+			}		
+	if(!f)
+		puts("No duplicates.\n");
 	return 0;
 
 }
