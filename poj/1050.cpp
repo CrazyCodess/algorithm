@@ -17,7 +17,7 @@ int main(){
 		int max=0,sum;
 		for ( i = 0; i < n; ++i)
 		{
-			for ( j = i; j < n; ++j)
+			for ( j = i; j < n; ++j)		//从i行到j行
 			{
 				sum=0;
 				for (int k = 0; k < n; ++k)
