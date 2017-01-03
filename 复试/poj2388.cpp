@@ -2,7 +2,7 @@
 #include <cstdio>
 using namespace std;
 int cows[10010];
-void swap(int* j,int* k){
+void swap(int *j,int *k){
 	if(*j!=*k){
 		int temp=*j;
 		*j=*k;
@@ -17,16 +17,18 @@ int partition(int a[],int low,int high){
 	{
 		if(a[i]<pivot)swap(&a[i],&a[++pivotpos]);
 	}
-	swap(low,pivotpos);
-	cout<<pivotpos<<endl;
+	swap(&a[low],&a[pivotpos]);
+	//cout<<pivotpos<<endl;
 	return pivotpos;
 
 }
 void qsort(int a[],int left,int right){
-	int pivotpos=partition(a,left,right);
-	qsort(a,left,pivotpos-1);
-	qsort(a,pivotpos+1,right);
-	return;
+	if(left<right){
+		int pivotpos=partition(a,left,right);
+		qsort(a,left,pivotpos-1);
+		qsort(a,pivotpos+1,right);
+		
+	}
 }
 
 int main(){
