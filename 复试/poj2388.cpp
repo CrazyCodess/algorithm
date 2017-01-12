@@ -14,11 +14,11 @@ int partition(int a[],int low,int high){
 	int pivotpos = low;
 	int pivot = a[low];
 	for (int i = low+1; i <=high; ++i)
-	{
+	{	
 		if(a[i]<pivot)swap(&a[i],&a[++pivotpos]);
 	}
 	swap(&a[low],&a[pivotpos]);
-	//cout<<pivotpos<<endl;
+	//cout<<pivotpos<<endl;	
 	return pivotpos;
 
 }
