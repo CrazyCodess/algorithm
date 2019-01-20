@@ -1,15 +1,9 @@
-//
-// Created by dell on 2019/1/19.
-//
-
-//
-// Created by dell on 2018/12/22.
-//
+/**
+* @Date 2019/1/20 20:40
+* @Created by dmyan
+*/
 #include<bits/stdc++.h>
-#include <bitset>
-#include <string> 
-#include <math.h>   
-#include<map>
+
 using namespace std;
 
 class Solution {
@@ -37,19 +31,19 @@ public:
         }
     }
     string intToRoman(int num) {
-    roman[1] = "I";
-    roman[5] = "V";
-    roman[10] = "X";
-    roman[50] = "L";
-    roman[100] = "C";
-    roman[500] = "D";
-    roman[1000] = "M";
-    roman[4] = "IV";
-    roman[9] = "IX";
-    roman[40] = "XL";
-    roman[90] = "XC";
-    roman[400] = "CD";
-    roman[900] = "CM";
+        roman[1] = "I";
+        roman[5] = "V";
+        roman[10] = "X";
+        roman[50] = "L";
+        roman[100] = "C";
+        roman[500] = "D";
+        roman[1000] = "M";
+        roman[4] = "IV";
+        roman[9] = "IX";
+        roman[40] = "XL";
+        roman[90] = "XC";
+        roman[400] = "CD";
+        roman[900] = "CM";
         res.clear();
         int tmp = 0;
         while(num){
@@ -75,15 +69,5 @@ public:
         return res;
     }
 };
-
-int main(){
-  string str = "as dasd";
-  str.erase(0,1);
-// Solution solu;
-  std::cout <<str<< '\n';
-
-  return 0;
-}
-
 
 

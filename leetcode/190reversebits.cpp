@@ -11,13 +11,16 @@ using namespace std;
 
 class Solution {
 public:
-    int hammingWeight(uint32_t n) {
-        int ans = 0;
-        while(n){
+    uint32_t reverseBits(uint32_t n) {
+        int i = 32;
+        uint32_t ans = 0;
+        while (i--){
+            ans <<=1;
             ans += n&1;
             n>>=1;
         }
         return ans;
     }
 };
+
 
