@@ -10,77 +10,23 @@
 #include <string> 
 #include <math.h>   
 #include<map>
+#include<algorithm>
 using namespace std;
 
-class Solution {
-public:
-    string res;
-    map<int, string> roman;
-
-    void appendRoman(int tmp, int w){
-        while(tmp){
-            if(tmp>=9){
-                res.append(roman[9*w]);
-                tmp -= 9;
-            }else if(tmp >=5){
-                res.append(roman[5*w]);
-                tmp -= 5;
-            }else if(tmp >=4){
-                res.append(roman[4*w]);
-                tmp -= 4;
-            }else{
-                for(int i=0;i<tmp;i++){
-                    res.append(roman[1*w]);
-                    tmp --;
-                }
-            }
-        }
-    }
-    string intToRoman(int num) {
-    roman[1] = "I";
-    roman[5] = "V";
-    roman[10] = "X";
-    roman[50] = "L";
-    roman[100] = "C";
-    roman[500] = "D";
-    roman[1000] = "M";
-    roman[4] = "IV";
-    roman[9] = "IX";
-    roman[40] = "XL";
-    roman[90] = "XC";
-    roman[400] = "CD";
-    roman[900] = "CM";
-        res.clear();
-        int tmp = 0;
-        while(num){
-            if(num/1000>0){
-                tmp = num/1000;
-                num -=tmp * 1000;
-                for(int i=0;i<tmp;i++)res.append(roman[1000]);
-
-            }else if(num/100>0){
-                tmp = num/100;
-                num -=tmp * 100;
-                appendRoman(tmp, 100);
-            }else if(num/10>0){
-                tmp = num/10;
-                num -= tmp * 10;
-                appendRoman(tmp,10);
-            }else{
-                tmp = num;
-                num = 0;
-                appendRoman(tmp,1);
-            }
-        }
-        return res;
-    }
-};
 
 int main(){
-  string str = "as dasd";
-  str.erase(0,1);
+ std::vector<int> v;
+ v.push_back(1);
+  v.push_back(-1);
+   v.push_back(2);
+    v.push_back(-4);
+     v.push_back(5);
 // Solution solu;
-  std::cout <<str<< '\n';
+     sort(v.begin(), v.end());
+     for(int i=0;i<v.size();i++){
+      cout <<v[i]<<"\n";
+     }
+  std::cout <<" "<< '\n';
 
   return 0;
 }
