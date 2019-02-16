@@ -20,7 +20,6 @@ public:
         while(cnt--){
             bitCnt *=2;
         }
-        cout<<bitCnt;
         for(int i=0;i<bitCnt;i++){
             bitset<10000> bits(i);
             tmp.clear();

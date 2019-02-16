@@ -47,11 +47,9 @@ public:
 };
 
 int main(){
-  bitset<10000> bar (5);
-  for(int i=0;i<10;i++){
-    cout<<bar[i]<<" ";
-  }
-  std::cout <<" "<< '\n';
+  string s("Test");
+  char c = s[0];
+  std::cout <<c<< '\n';
 
   return 0;
 }
