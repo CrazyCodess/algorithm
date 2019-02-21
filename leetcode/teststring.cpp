@@ -17,54 +17,28 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> arrays;
-    vector<int> tmp;
-    vector<vector<int> > res;
-    void backtracking(int target, int idx){
-        if(target == 0){
-          cout<<idx<<" "<<target<<" "<<"\n";
-          res.push_back(tmp);
-          return;
-
+    int numDecodings(string s) {
+        vector<int> nums(s.size()+1, 0);
+        nums[0] = 1;
+        nums[1] = 1;
+        for(int i = 1;i<s.size();i++){
+            nums[i+1] = nums[i];
+            if(((s[i-1] - 'A' + 1)*10+(s[i] - 'A' + 1)) <= 26)nums[i+1] += nums[i-1]; 
         }
-        if(idx>=arrays.size())return;
-        int cnt = target/arrays[idx];
-       
-        for(int i=0;i<=cnt;i++){
-           
-            int t = i;
-            while(t--){
-                tmp.push_back(arrays[idx]);
-            }
-            backtracking(target - i*arrays[idx], idx+1);
-            t = i;
-            while(t--){
-                tmp.pop_back();
-            }
-        }
-    }
-    vector<vector<int> > combinationSum(vector<int>& candidates, int target) {
-        res.clear();
-        res.clear();
-        arrays = candidates;
-        tmp.clear();
-        backtracking(target, 0);
-        return res;
+        return nums[s.size()];
     }
 };
-
 int main(){
-  // Solution solu;
+   Solution solu;
   // vector<int> cand;
   // cand.push_back(2);
   // cand.push_back(3);
   // cand.push_back(6);
   // cand.push_back(7);
   // solu.combinationSum(cand, 7);
- std::string str ("Please, replace the vowels in this sentence by asterisks.");
-  std::size_t found = str.find_first_of("aeiou");
-    cout<<found; 
-
+    int* a;
+    a = 0;
+    cout<<INT_MIN;
 
 
   return 0;
