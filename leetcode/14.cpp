@@ -11,6 +11,7 @@ int romanToInt(string s) {
 		g.insert(make_pair('C',100));
 		g.insert(make_pair('D',500));
 		g.insert(make_pair('M',1000));
+		
 		int ans = 0;
 		for(int i=s.size() - 1;i>=0;i--){
 			if(s[i]=='V'||s[i]=='X'){
